@@ -4,62 +4,95 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace @switch
+namespace calculator
 {
     class Program
     {
+         static  void cal()
+        {
+            Console.Write("------------");
+            Console.Write("calculator program");
+            Console.Write("------------");
+
+        }
+        public static void display()
+        {
+            Console.WriteLine("enter an option");
+            Console.WriteLine("+Add");
+            Console.WriteLine("-Sub");
+            Console.WriteLine("*Multi");
+            Console.WriteLine("/Div");
+            Console.Write("Enter an option");
+        }
+        public static void bye()
+        {
+            Console.WriteLine("bye");
+        }
+     
         static void Main(string[] args)
         {
-
-          
-           
-         
-            Console.WriteLine("1.Add a detail \n2.update a detail \n3.display detail");
-            Console.WriteLine("Enter the options");
-            int option;
-            option = Convert.ToInt32(Console.ReadLine());
-       
-            string name;
-            int empid;
-            int phoneno;
-            string email;
-            string experience;
-            int salary;
-
-
-            switch (option)
+                
+            do
             {
-            case 1:
-                Console.WriteLine("Add a detail");
+                double num1 = 0;
+                double num2 = 0;
+                double result = 0;
 
-                    name = Console.ReadLine();
-                    empid = Convert.ToInt32(Console.ReadLine());
-                    phoneno = Convert.ToInt32(Console.ReadLine());
-                    email = Console.ReadLine();
-                    experience = Console.ReadLine();
-                    salary = Convert.ToInt32(Console.ReadLine());
-                    break;
-                case 2:
-                    Console.WriteLine("update a detail");
-                    Console.WriteLine("given detail are updated");
-                    break;
-                case 3:
-                    Console.WriteLine("emp details are:");
-               
-                    Console.WriteLine ("name=bharath");
-                    Console.WriteLine("empid=1234");
-                    Console.WriteLine("phoneno=12345467890");
-                    Console.WriteLine("emai=bharathmbca@gmail.com");
-                    Console.WriteLine("experience=2years");
-                    Console.WriteLine("salary=100000");
-
-                    break;
-                default :
-                    Console.WriteLine("out of range selection");
-                    break;
-            }
+                cal();
+                Console.WriteLine();
 
 
+                Console.WriteLine("Enter the number 1:");
+                num1 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Enter the number 2:");
+                num2 = Convert.ToDouble(Console.ReadLine());
+
+
+
+                display();
+                Console.WriteLine();
+
+                switch (Console.ReadLine())
+                {
+                    case "+":
+                        result = num1 + num2;
+                        Console.WriteLine("your result:" + result);
+                        break;
+
+                    case "-":
+                        result = num1 - num2;
+                        Console.WriteLine("your result:" + result);
+                        break;
+
+                    case "*":
+                        result = num1 * num2;
+                        Console.WriteLine("your result:" + result);
+                        break;
+
+                    case "/":
+                        result = num1 / num2;
+                        Console.WriteLine("your result:{num1}/{num2}=" + result);
+                        break;
+
+                    default:
+                        Console.Write("That was not an option");
+                        break;
+
+
+                }
+                Console.WriteLine("would you like to continue? (Yes=y,No=N)_:");
+            } while (Console.ReadLine().ToUpper() == "y");
+          
+            bye();
+            Console.WriteLine();
+
+            Console.ReadKey();
         }
     }
 }
+    
+
+    
+    
+
