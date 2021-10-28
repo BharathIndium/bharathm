@@ -4,72 +4,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace array
+namespace arraytask1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int n, i, j, temp;
-            int[] arr = new int[15];
 
-            Console.Write("Enter no of emp :");
-            n = int.Parse(Console.ReadLine());
+            int[,] accdet;
+            int emp, acc;
+            Console.WriteLine("ENTER THE NUMBER OF EMPLOYEES ");
+            emp = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ENTER THE NUMBER OF ACCOUNTS OF EMPLOYEES");
+            acc = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter salarys");
-            for (i = 0; i < n; i++)
+            accdet = new int[emp, acc];
 
+            for (int i = 0; i < emp; i++)
             {
+                int dec = 0;
+                Console.WriteLine("ENTER CUSTOMER NAME");
+                string name = Console.ReadLine();
 
-                arr[i] = int.Parse(Console.ReadLine());
-
-            }
-
-           for (i = 0; i < n; i++)
-
-            {
-
-                for (j = i + 1; j < n; j++)
-
-
+                for (int j = 0; j < acc; j++)
                 {
-                   
-                    if (arr[i] > arr[j])
 
+
+                    switch (j)
                     {
-                        
-                        temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
+                        case 1:
+                            Console.WriteLine("ENTER 1 ACCOUNT BALANCE");
+                            break;
+                        case 2:
+                            Console.WriteLine("ENTER 2 ACCOUNT BALANCE");
+                            break;
+                        case 3:
+                            Console.WriteLine("ENTER 3 ACCOUNT BALANCE");
+                            break;
 
                     }
-                  
+
+
+                    dec = dec + Convert.ToInt32(Console.ReadLine());
+
                 }
-
+                Console.WriteLine(name + "  Total balance   :" + dec);
             }
-            Console.WriteLine("After Ascending Numbers ");
-           
-            for (i = 0; i < n; i++)
-            {
-
-                Console.WriteLine(arr[i]);
-               
-            }
-            double highestSalary = arr.Max();
-
-            double lowestSalary = arr.Min();
-
-            Console.WriteLine("highestSalary is:{0}\nlowestSalary is:{1}\n",highestSalary, lowestSalary);
 
 
-            Console.ReadKey();
         }
     }
 }
-
-
-
-
-
-
     
+        
