@@ -4,95 +4,72 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace calculator
+namespace array
 {
     class Program
     {
-         static  void cal()
-        {
-            Console.Write("------------");
-            Console.Write("calculator program");
-            Console.Write("------------");
-
-        }
-        public static void display()
-        {
-            Console.WriteLine("enter an option");
-            Console.WriteLine("+Add");
-            Console.WriteLine("-Sub");
-            Console.WriteLine("*Multi");
-            Console.WriteLine("/Div");
-            Console.Write("Enter an option");
-        }
-        public static void bye()
-        {
-            Console.WriteLine("bye");
-        }
-     
         static void Main(string[] args)
         {
-                
-            do
+            int n, i, j, temp;
+            int[] arr = new int[15];
+
+            Console.Write("Enter no of emp :");
+            n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter salarys");
+            for (i = 0; i < n; i++)
+
             {
-                double num1 = 0;
-                double num2 = 0;
-                double result = 0;
 
-                cal();
-                Console.WriteLine();
+                arr[i] = int.Parse(Console.ReadLine());
 
+            }
 
-                Console.WriteLine("Enter the number 1:");
-                num1 = Convert.ToDouble(Console.ReadLine());
+           for (i = 0; i < n; i++)
 
-                Console.WriteLine("Enter the number 2:");
-                num2 = Convert.ToDouble(Console.ReadLine());
+            {
+
+                for (j = i + 1; j < n; j++)
 
 
-
-                display();
-                Console.WriteLine();
-
-                switch (Console.ReadLine())
                 {
-                    case "+":
-                        result = num1 + num2;
-                        Console.WriteLine("your result:" + result);
-                        break;
+                   
+                    if (arr[i] > arr[j])
 
-                    case "-":
-                        result = num1 - num2;
-                        Console.WriteLine("your result:" + result);
-                        break;
+                    {
+                        
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
 
-                    case "*":
-                        result = num1 * num2;
-                        Console.WriteLine("your result:" + result);
-                        break;
-
-                    case "/":
-                        result = num1 / num2;
-                        Console.WriteLine("your result:{num1}/{num2}=" + result);
-                        break;
-
-                    default:
-                        Console.Write("That was not an option");
-                        break;
-
-
+                    }
+                  
                 }
-                Console.WriteLine("would you like to continue? (Yes=y,No=N)_:");
-            } while (Console.ReadLine().ToUpper() == "y");
-          
-            bye();
-            Console.WriteLine();
+
+            }
+            Console.WriteLine("After Ascending Numbers ");
+           
+            for (i = 0; i < n; i++)
+            {
+
+                Console.WriteLine(arr[i]);
+               
+            }
+            double highestSalary = arr.Max();
+
+            double lowestSalary = arr.Min();
+
+            Console.WriteLine("highestSalary is:{0}\nlowestSalary is:{1}\n",highestSalary, lowestSalary);
+
 
             Console.ReadKey();
         }
     }
 }
-    
+
+
+
+
+
 
     
-    
-
