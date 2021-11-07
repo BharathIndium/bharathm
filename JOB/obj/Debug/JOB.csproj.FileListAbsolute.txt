@@ -1,0 +1,7 @@
+C:\Users\I4340\source\repos\JOB\JOB\bin\Debug\JOB.exe.config
+C:\Users\I4340\source\repos\JOB\JOB\bin\Debug\JOB.exe
+C:\Users\I4340\source\repos\JOB\JOB\bin\Debug\JOB.pdb
+C:\Users\I4340\source\repos\JOB\JOB\obj\Debug\JOB.csproj.AssemblyReference.cache
+C:\Users\I4340\source\repos\JOB\JOB\obj\Debug\JOB.csproj.CoreCompileInputs.cache
+C:\Users\I4340\source\repos\JOB\JOB\obj\Debug\JOB.exe
+C:\Users\I4340\source\repos\JOB\JOB\obj\Debug\JOB.pdb
